@@ -8,5 +8,7 @@
     <string name="switch_off">Inactivo</string>
     <string name="go_map">Ver Mapa</string>
     <string name="go_map_onclic_text">Boton pulsado</string>
+    <string name="me">Yo</string>
+    <string name="ok">Ok</string>
 
 </resources>
