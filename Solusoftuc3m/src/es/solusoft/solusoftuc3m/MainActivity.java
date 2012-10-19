@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 /**
@@ -76,6 +77,16 @@ public class MainActivity extends Activity {
     	//refrescamos el boton al nuevo estado
     	refreshSwitchText();
 	}
-
+    
+    /**
+     * Binding que permite controlar el evento de pulsacion del boton map
+     * La llamada est‡ en el layout res/activity_main
+     * @param v
+     */
+    public void onButtonMapClic(View v) {
+    	
+    	//De momento no navega, simplemente muestra un mensaje
+    	Toast.makeText(this, getString(R.string.go_map_onclic_text), Toast.LENGTH_SHORT).show();
+	}
     
 }

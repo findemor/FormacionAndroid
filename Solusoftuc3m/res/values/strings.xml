@@ -6,5 +6,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="switch_on">Activo</string>
     <string name="switch_off">Inactivo</string>
+    <string name="go_map">Ver Mapa</string>
+    <string name="go_map_onclic_text">Boton pulsado</string>
 
 </resources>
