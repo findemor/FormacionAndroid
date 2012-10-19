@@ -34,6 +34,19 @@ public class MainActivity extends Activity {
     }
     
     
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putBoolean("mainactivity_mswitchon", mSwitchOn);
+	};
+
+	@Override
+	protected void onRestoreInstanceState(Bundle state) {
+		super.onRestoreInstanceState(state);
+
+		mSwitchOn = state.getBoolean("mainactivity_mswitchon");
+	}
+    
     /**
      * Actualiza el texto del boton de la vista 
      * en funci—n del valor del miembro mSwitchOn
