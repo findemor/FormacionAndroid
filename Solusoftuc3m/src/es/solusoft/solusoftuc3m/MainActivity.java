@@ -2,6 +2,7 @@ package es.solusoft.solusoftuc3m;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -85,8 +86,9 @@ public class MainActivity extends Activity {
      */
     public void onButtonMapClic(View v) {
     	
-    	//De momento no navega, simplemente muestra un mensaje
-    	Toast.makeText(this, getString(R.string.go_map_onclic_text), Toast.LENGTH_SHORT).show();
+    	//Navegamos a la actividad mapa
+    	Intent mapActivity = new Intent(this, MapActivity.class);
+		this.startActivity(mapActivity);
 	}
     
 }
