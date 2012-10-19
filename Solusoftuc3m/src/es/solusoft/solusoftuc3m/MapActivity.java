@@ -6,6 +6,7 @@ import com.google.android.maps.MapView;
 
 import android.content.Context;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -46,6 +47,15 @@ public class MapActivity extends com.google.android.maps.MapActivity {
         //Centramos el mapa
         mMapController.setZoom(20); //Fixed Zoom Level
         centerLocation(lastKnownLocation);
+        
+        //Comenzamos a atender actualizaciones en las posiciones
+        CustomLocationListener customLocationListener = new CustomLocationListener();
+
+        mLocationManager.requestLocationUpdates(
+          LocationManager.GPS_PROVIDER,
+          2000, //minTime
+          0, //minDistance
+          customLocationListener);
     }
 
     @Override
@@ -71,4 +81,26 @@ public class MapActivity extends com.google.android.maps.MapActivity {
 		 
 		 mMapController.animateTo(geoPoint);
 	 };
+	 
+	 
+	 
+	 /**
+	  * Location Listener personalizado
+	  * @author findemor
+	  *
+	  */
+	 private class CustomLocationListener implements LocationListener{
+
+		  public void onLocationChanged(Location argLocation) {
+			  centerLocation(argLocation);
+		  }
+
+		  public void onProviderDisabled(String provider) {}
+
+		  public void onProviderEnabled(String provider) {}
+
+		  public void onStatusChanged(String provider,
+		    int status, Bundle extras) {}
+	 }
+
 }
